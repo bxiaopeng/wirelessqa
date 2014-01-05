@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 5.4.4 (402282)"/><meta name="author" content="毕小朋"/><meta name="created" content="2013-12-26 01:04:22 +0000"/><meta name="updated" content="2014-01-05 13:42:09 +0000"/><title>03. Git入门指南</title></head><body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+<div style="text-align: center;"><span style="font-size: 36px;">Git入门指南</span></div>
+<div><span style="font-size: 36px;"><br/></span></div>
+<div style="text-align: center;"><span style="font-size: 14px;">作者：毕小朋 博客：<a href="http://blog.csdn.net/wirelessqa">http://blog.csdn.net/wirelessqa</a></span><span style="font-size: 36px;"> </span></div>
+<div style="text-align: center;"><span style="font-size: 14px;">声明：本文参考网上的很多优秀的教程，感谢互联网的分享精神！</span></div>
+<div style="text-align: center;"><span style="font-size: 14px;"><br/></span></div>
+<div><span style="font-size: 36px;">一. Git基本介绍</span></div>
+<div><span style="font-size: 36px;"><br/></span></div>
+<span style="font-size: 24px;"><b>1.1 什么是Git？</b></span>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">Git是一个版本控制系统（Version Control System）</span><br/></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 24px;"><b><span style="line-height: 21px;">1.2 什么是“</span><span style="background-color: rgb(255, 255, 255); line-height: 21px;">版本控制系统</span><span style="line-height: 21px;">”？</span></b></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;"><br/></span></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">记录下所有文件的所有版本，</span><span style="background-color: rgb(255, 255, 255); line-height: 21px;">可以有效地追踪文件的变化。当代码出错的时候，可以很容易地恢复到之前的状态。</span><span style="line-height: 21px;"><br/></span></span></div>
+<div><span style="line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">对于多人协作开发的项目来说，版本控制系统更是必不可少。它保证每个人都能够获取最近更新的代码，每个人开发的代码可以更方便地增加到项目中，避免不同代码之前产生的冲突，减小沟通成本。</span><br/></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">而Git就是时下最流行的版本控制系统</span><span style="background-color: rgb(255, 255, 255); line-height: 21px;"><br/></span></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 24px;"><b>1.3 GitHub是什么？</b></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><font color="#000000" style="font-size: 18px;"><a href="https://github.com/">https://github.com/</a><span style="background-color: rgb(255, 255, 255); line-height: 21px;"><br/></span></font></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">GitHub就是一个基于Git的代码托管网站。由于其上聚集了大量的优秀代码和优秀程序员，使得它成为了一个极具价值的开发者社区。</span><span style="background-color: rgb(255, 255, 255); line-height: 21px;"><br/></span></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">在GitHub上，你可以免费托管你的代码，进行版本控制，同别人协同开发。代码必须开源，付费用户可以选择私有项目。</span><span style="background-color: rgb(255, 255, 255); line-height: 21px;"><br/></span></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; font-size: 18px;">安装Git</span></div>
+<div><span style="line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><font color="#000000" style="font-size: 18px;"><a href="http://iissnan.com/progit/html/zh/ch1_4.html">http://iissnan.com/progit/html/zh/ch1_4.html</a><br/></font></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="font-size: 24px;"><b>1.4 获取帮助</b></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">git help &lt;<span style="line-height: 20px; white-space: pre-wrap;">verb</span>&gt;</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">git &lt;<span style="line-height: 20px; white-space: pre-wrap;">verb</span>&gt;  --help</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">man git -&lt;<span style="line-height: 20px; white-space: pre-wrap;">verb</span>&gt;</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">另外git help可查看git命令参数</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/11d3e606a5ba684612cbaf1fa6434e88.jpeg" height="562" width="542"/><br/></div>
+<div><br/></div>
+<h2 style="padding: 0px; line-height: 40px; text-rendering: optimizelegibility; background-color: rgb(255, 255, 255);"><span style="font-size: 36px; font-weight: normal;">二. 创建Git仓库</span></h2>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 24px;"><b>2.1 创建Git仓库</b></span></div>
+<div><br/></div>
+<span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/40b91ca84621c0bd6fefdd7f2e4e0aa2.jpeg" height="172" width="842"/></span>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/617ec7b0204f593a2ee6f1a04cbbc7a4.jpeg" height="660" width="1192"/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 24px;"><b>2.2. Github上创建仓库</b></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><br/>
+<br/></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/53e823fa5163f580781128cb3062d8fa.jpeg" height="499" width="738"/><br/></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/78a1744cfdbf31e6977e45a45865ecb3.jpeg" height="644" width="1079"/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 24px;"><b>2.3 创建git仓库步骤说明</b></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">1. 本地创建一个目录 </span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">2. 进入目录执行“git init”进行初始化 后，git会对此目录下的文件进行版本控制</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">3. 在远程服务器上创建一个项目(gitlab或github上)，记住SSH地址  </span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">4. git remote add 别名 &lt;SSH url&gt;  </span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">5. 以后可以通过别名提交代码 </span><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 24px;"><b>2.4 从现有仓库中克隆代码</b></span><br/></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">步骤1. 查看地址</span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/5b8bf3fdb3923c1737fea245f293fdf3.jpeg" height="182" width="774"/><br/></span></div>
+<div><span style="font-size: 18px;">步骤</span><span style="font-size: 18px;">2. clone</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/4909ad5755de18624e9791e1d06c036d.jpeg" height="141" width="771"/><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<h2 style="padding: 0px; line-height: 40px; text-rendering: optimizelegibility; background-color: rgb(255, 255, 255);"><span style="font-size: 36px;">三. 初次运行 Git 前的配置 </span></h2>
+<div><br/></div>
+<div><br/></div>
+<div><span style="font-size: 18px;">Git 提供了一个叫做 git config 的工具，专门用来配置或读取相应的工作环境变量，正是由这些环境变量，决定了 Git 在各个环节的具体工作方式和行为。</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">这些变量可以存放在以下三个不同的地方：</span></div>
+<div><br/></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 20px; white-space: nowrap;"><font color="#FF2F92">1. 系统中对所有用户都普遍适用的配置 </font></span><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><font face="Microsoft YaHei"><span style="font-size: 18px;"><code style="line-height: 20px; white-space: nowrap; padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; border: 1px solid rgb(225, 225, 232);">/etc/gitconfig</code><span style="line-height: 20px; white-space: nowrap; background-color: rgb(255, 255, 255);"> 文件</span></span></font></div>
+<ul style="padding: 0px; line-height: 21px; background-color: rgb(255, 255, 255);">
+<li style="padding: 0px; line-height: 20px;"><span style="font-size: 18px;"><b>用法：</b>  若使用 <code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">git config</code> 时用 <code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">--system</code>选项，读写的就是这个文件。<br/></span></li>
+</ul>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 20px; font-size: 18px;"><font color="#FF2F92">2. 用户目录下的配置文件只适用于该用户</font></span></div>
+<ul style="padding: 0px; line-height: 21px; background-color: rgb(255, 255, 255);">
+<li style="padding: 0px; line-height: 20px;"><font face="Microsoft YaHei"><span style="font-size: 18px;"><code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">~/.gitconfig</code> 文件：</span></font></li>
+<li style="padding: 0px; line-height: 20px;"><span style="font-size: 18px;"><br/></span></li>
+<li style="padding: 0px; line-height: 20px;"><span style="font-size: 18px;"><b>用法：</b>若使用 <code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">git config</code> 时用 <code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">--global</code>选项，读写的就是这个文件。</span></li>
+</ul>
+<div><span style="font-size: 18px;"><font color="#FF2F92"><span style="background-color: rgb(255, 255, 255); line-height: 20px;">3.　</span><span style="background-color: rgb(255, 255, 255); line-height: 20px;">配置</span><span style="background-color: rgb(255, 255, 255); line-height: 20px;">仅仅针对当前项目有效</span></font></span></div>
+<ul style="padding: 0px; line-height: 21px; background-color: rgb(255, 255, 255);">
+<li style="padding: 0px; line-height: 20px;"><span style="font-size: 18px;">当前项目的 git 目录中的配置文件（也就是工作目录中的 <code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">.git/config</code> 文件）</span></li>
+<li style="padding: 0px; line-height: 20px;"><span style="font-size: 18px;"><br/></span></li>
+<li style="padding: 0px; line-height: 20px;"><span style="font-size: 18px;"><b>注意：</b>　每一个级别的配置都会覆盖上层的相同配置，所以 <code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">.git/config</code> 里的配置会覆盖<code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">/etc/gitconfig</code> 中的同名变量。</span></li>
+</ul>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#查看当前的配置  git config -- list</font></span></div>
+<div><br/></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/a8cbf8de2da7471caaf32a844ef412a4.jpeg" height="158" width="996"/><br/></span></div>
+<div><br/></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#用户信息</font></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF"><br/></font></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">第一个要配置的是你个人的用户名称和电子邮件地址</span><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">每次 Git 提交时都会引用这两条信息，说明是谁提交了更新，所以会随更新内容一起被永久纳入历史记录</span><br/></span></div>
+<div><span style="font-size: 18px;"><span style="line-height: 20px; white-space: pre-wrap;">$ git config --global</span> <a href="http://user.name" style="line-height: 20px; white-space: pre-wrap;">user.name</a> <span style="line-height: 20px; white-space: pre-wrap;">"John Doe</span><span style="line-height: 20px; white-space: pre-wrap;">”</span><span style="background-color: rgb(255, 255, 255); line-height: 21px;"><br/></span></span></div>
+<div><span style="font-size: 18px;"><span style="line-height: 20px; white-space: pre-wrap;">$ git config --global user.email</span> <a href="mailto:johndoe@example.com" style="line-height: 20px; white-space: pre-wrap;">johndoe@example.com</a><span style="line-height: 20px; white-space: pre-wrap;"><br/></span></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; font-size: 18px;"><font color="#0433FF">#全局更改</font></span></div>
+<div><span style="line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/4049d59d10a417ff33fec289bcf4ca7e.jpeg" height="39" width="726"/><span style="line-height: 21px;"><br/></span></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="line-height: 21px; background-color: rgb(255, 255, 255);">用了 </span><code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">--global</code><span style="line-height: 21px; background-color: rgb(255, 255, 255);"> 选项，那么更改的配置文件就是位于你用户主目录下的那个，以后你所有的项目都会默认使用这里配置的用户信息。</span></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; font-size: 18px;">#<font color="#0433FF">只更改当前项目的用户信息</font></span></div>
+<div><span style="line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="line-height: 21px; background-color: rgb(255, 255, 255);">要在某个特定的项目中使用其他名字或者电邮，只要去掉 </span><code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">--global</code><span style="line-height: 21px; background-color: rgb(255, 255, 255);"> 选项重新配置即可，新的设定保存在当前项目的</span><code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">.git/config</code><span style="line-height: 21px; background-color: rgb(255, 255, 255);"> 文件里。</span><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;">步骤1.先查看一下未设置前的config</span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/4d0211beae4db2c41066a6b4f1b43989.jpeg" height="244" width="549"/><span style="line-height: 21px; background-color: rgb(255, 255, 255);"><br/></span></span></div>
+<div><span style="background-color: rgb(255, 255, 255); font-size: 18px; line-height: 21px;">步骤</span><span style="font-size: 18px;">2. 修改当前项目的用户名和邮箱</span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/52db62161bb9810e5f46aeceba873220.jpeg" height="39" width="708"/><br/></span></div>
+<div><span style="background-color: rgb(255, 255, 255); font-size: 18px; line-height: 21px;">步骤</span><span style="font-size: 18px;">3.查看修改后的项目配置</span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/8807276908cd6c2909e49a7fb39a1fcb.jpeg" height="288" width="537"/><span style="line-height: 21px; background-color: rgb(255, 255, 255);"><br/></span></span></div>
+<div><span style="font-size: 18px;">测试一下修改是否成功：</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">1. 新建一个test.txt文件  2. 提交后查看日志</span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/9f4a18ace79e58c4cfc6424a6b76a1ff.jpeg" height="110" width="441"/><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">更多配置请参考： <a href="http://iissnan.com/progit/html/zh/ch1_5.html">http://iissnan.com/progit/html/zh/ch1_5.html</a></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"> </span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 36px;"><b>四. Git工作流</b></span><br/></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">在你自建的Git本地仓库中，有三个区域：本地目录、暂存区、HEAD。</span><br/></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;"><span style="line-height: 21px; background-color: rgb(255, 255, 255);"><br/></span></span></div>
+<font color="#FF2F92">工作目录</font>： 就是受Git控制的文件夹，所有被跟踪记录的文件都包括在其中；
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;"><font color="#FF2F92">暂存区</font>（index或者stage）：类似一个缓存区域，临时保存你做的改动；</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;"><font color="#FF2F92">HEAD</font>：指向最近一次提交后的结果。</span><span style="background-color: rgb(255, 255, 255); line-height: 21px;"><br/></span></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/12344e77c31c0eb8fed52d6857e13a05.jpeg" height="381" width="702"/><span style="background-color: rgb(255, 255, 255); line-height: 21px;"><br/></span></span></div>
+<span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;">用一个比喻来描述一下这三个区域：</span>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;">Git工作流：假设你是一个学生，你需要写一门课的作业，作业有好几张试卷和几本练习题，写好之后把作业交给老师。</span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;"><br/></span></div>
+<div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;">你把所有作业放在桌上开始写，这里就是你的“工作目录”</span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;">当你写完一张试卷，把它放进你的书包里，它就进入了“暂存区”</span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">等你把作业都写完了，放在书包里带到学校，全部交给了这门课的老师，他就是HEAD所指向的位置</span><span style="background-color: rgb(255, 255, 255); line-height: 21px;"><br/></span></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><font color="#FF2F92" style="font-size: 24px;">记录每次更新到仓库</font><br/></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">工作目录下面的所有文件都不外乎这<b style="font-size: 26px;">两种状态</b>：已跟踪或未跟踪</span><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">未跟踪的文件的改动不受到Git的版本控制。</span></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;"><br/></span></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">已跟踪的文件，即被纳入版本控制的文件，又分为未修改（unmodified）、已修改（modified）、已暂存（staged）三种状态。</span><br/></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/dffeb257ee903158a9e6a837d455af45.jpeg" height="321" width="519"/><span style="background-color: rgb(255, 255, 255); line-height: 21px;"><br/></span></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;">当在工作目录中新加入一个文件时，它处于未跟踪状态，这表示其没有纳入Git的版本控制。</span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;">通过 git add 命令可以将其加入跟踪，并同时放入暂存区。</span>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;">一个已经被跟踪的文件，如果没有做过新的修改，就是未修改状态。</span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;">一旦对其做了改动，就变成了已修改状态。通过 git add 命令可以将已修改的文件放入暂存区。</span></div>
+<div><span style="font-size: 18px;"><br style="word-wrap: break-word; line-height: 21px; background-color: rgb(255, 255, 255);"/>
+<br/></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;">初次克隆某个仓库时，工作目录中所有文件都是已跟踪且未修改的状态。</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;">git commit 命令会将暂存区中的文件提交至HEAD所指向的分支。当被commit之后，暂存区的文件将回到未修改状态。</span></div>
+<div><br/></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div style="font-size: 17px;"><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 22px;"><b>再来套用前面的那个例子：</b></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;">作业里要交的试卷和练习题都处于已跟踪状态，那些不用交的就是未跟踪。</span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;">当你写了某张试卷之后，它就变成了已修改。写完了把它放进书包，它就是已暂存。</span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;">等你把它提交给老师之后，假设老师瞬间就把它批改完并发还给你，那这时对你来说，它又重新成为了未修改。</span></div>
+<div><span style="font-size: 18px;"><br style="word-wrap: break-word; line-height: 21px; background-color: rgb(255, 255, 255);"/>
+<br/></span></div>
+<div><span style="line-height: 21px; font-size: 36px;"><b>五. 查看文件的状态 git status</b></span><br/></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ <font color="#FF2F92">git status</font></span>
+<div><span style="font-size: 18px;"># On branch master</span></div>
+<div><span style="font-size: 18px;">nothing to commit, working directory clean</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">说明：</span></div>
+<div><span style="font-size: 18px;">1. 当前处于的分支</span></div>
+<div><span style="font-size: 18px;">2. 当前目录是干净的，没有未被跟踪的文件，也没有被修改的文件</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#新建一个文件，再查看文件的状态</font></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/bfbcc80f334886d62c9001629c1a1078.jpeg" height="141" width="584"/><br/></span></div>
+<div><span style="font-size: 18px;"> <br/></span></div>
+<div><span style="font-size: 18px;">会提示未跟踪的文件</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">未跟踪的文件意味着Git在之前的快照（提交）中没有这些文件；</span></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;"><br/></span></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">Git 不会自动将之纳入跟踪范围，除非你明明白白地告诉它“我需要跟踪该文件”，因而不用担心把临时文件什么的也归入版本管理。</span><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; font-size: 36px;"><b>六. 跟踪新文件 git add</b></span><br/></div>
+<div><br/></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/892f0f2e438d69b699f94eb81af6d861.jpeg" height="136" width="458"/><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">文件test2已被跟踪，并处于暂存状态</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">git add <span style="background-color: rgb(255, 255, 255); line-height: 21px;">后面可以指明要跟踪的文件或目录路径。如果是目录的话，就说明要递归跟踪该目录下的所有文件。</span></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">git add 的</span><span style="background-color: rgb(255, 255, 255); line-height: 21px;">潜台词就是把目标文件快照放入暂存区域，也就是 add file into staged area，同时未曾跟踪过的文件标记为需要跟踪。</span></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; font-size: 24px;"><b>暂存已修改的文件</b></span></div>
+<div><span style="line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; font-size: 18px;"><font color="#0433FF">#先修改已存在的文件test.txt  然后查看文件状态</font></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/a1c308d142c248f6dea910aa7530ad0e.jpeg" height="239" width="550"/><span style="line-height: 21px;"><br/></span></span></div>
+<div><span style="font-size: 18px;">可以看到  Changes not staged for commit,即已修改但没有暂存的文件test.txt</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#加入暂存，查看文件状态</font></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/ca4bc3790934e1c8992a24fd09b6f87a.jpeg" height="154" width="480"/><br/></span></div>
+<div><span style="font-size: 18px;">可以看出一个修改的文件和一个新文件</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">git add <span style="background-color: rgb(255, 255, 255); line-height: 21px;">这是个多功能命令，根据目标文件的状态不同，此命令的效果也不同：可以用它开始跟踪新文件，或者把已跟踪的文件放到暂存区，还能用于合并时把有冲突的文件标记为已解决状态等</span></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;">注意： 每次修改文件都需要暂存再提交</span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; font-size: 36px;"><b>七. 忽略某些文件</b></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。</span></span><span style="background-color: rgb(255, 255, 255); font-size: 18px; line-height: 21px;">通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。</span></div>
+<div><span style="font-size: 18px;"><span style="line-height: 21px;"><br/></span></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF"><span style="line-height: 21px;">#项目中创建一个文件</span><span style="line-height: 20px; white-space: pre-wrap;">.gitignore</span></font></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/3375723dc5cf432af52e612658a936b8.jpeg" height="65" width="461"/><span style="line-height: 20px; white-space: pre-wrap;"><br/></span></span></div>
+<div><span style="line-height: 20px; white-space: pre-wrap; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px; line-height: 20px; white-space: pre-wrap;"><b>说明：</b></span></div>
+<div><span style="font-size: 18px; line-height: 20px; white-space: pre-wrap;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="line-height: 21px; background-color: rgb(255, 255, 255);">第一行告诉 Git 忽略所有以 </span><code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">.o</code><span style="line-height: 21px; background-color: rgb(255, 255, 255);"> 或 </span><code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">.a</code><span style="line-height: 21px; background-color: rgb(255, 255, 255);"> 结尾的文件。一般这类对象文件和存档文件都是编译过程中出现的，我们用不着跟踪它们的版本。</span><span style="line-height: 20px; white-space: pre-wrap;"><br/></span></span></div>
+<div><span style="font-size: 18px;"><span style="line-height: 21px; background-color: rgb(255, 255, 255);">第二行告诉 Git 忽略所有以波浪符（</span><code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">~</code><span style="line-height: 21px; background-color: rgb(255, 255, 255);">）结尾的文件，许多文本编辑软件（比如 Emacs）都用这样的文件名保存副本。</span><span style="line-height: 21px; background-color: rgb(255, 255, 255);"><br/></span></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; font-size: 18px;"><font color="#0433FF">#测试一下.a和.o文件</font></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/007bf026763bb106ea9a33a4e4123315.jpeg" height="443" width="473"/><br/></span></div>
+<div><span style="line-height: 20px; white-space: pre-wrap; font-size: 18px;"><font color="#0433FF">#新建个.log的文件是ok的</font></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/2d2db5796e355e8afc967bcda756c8e1.jpeg" height="240" width="478"/><span style="line-height: 20px; white-space: pre-wrap;"><br/></span></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">文件 <code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">.gitignore</code> 的<b style="font-size: 31px;"><font color="#FF40FF">格式规范</font></b>如下：</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<ul style="padding: 0px; line-height: 21px; background-color: rgb(255, 255, 255);">
+<li style=" padding: 0px; line-height: 20px;"><span style="font-size: 18px;">1. 所有空行或者以注释符号 <code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">＃</code> 开头的行都会被 Git 忽略。</span></li>
+<li style=" padding: 0px; line-height: 20px;"><span style="font-size: 18px;">2. 可以使用标准的 glob 模式匹配。</span></li>
+<li style=" padding: 0px; line-height: 20px;"><span style="font-size: 18px;">3. 匹配模式最后跟反斜杠（<code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">/</code>）说明要忽略的是目录。</span></li>
+<li style=" padding: 0px; line-height: 20px;"><span style="font-size: 18px;">4. 要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（<code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">!</code>）取反。</span></li>
+</ul>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;">5. 所谓的 glob 模式是指 shell 所使用的简化了的正则表达式。</span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="line-height: 21px; background-color: rgb(255, 255, 255);">6. 星号（</span><code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">*</code><span style="line-height: 21px; background-color: rgb(255, 255, 255);">）匹配零个或多个任意字符；</span><code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">[abc]</code><span style="line-height: 21px; background-color: rgb(255, 255, 255);">匹配任何一个列在方括号中的字符（这个例子要么匹配一个 a，要么匹配一个 b，要么匹配一个 c）；问号（</span><code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">?</code><span style="line-height: 21px; background-color: rgb(255, 255, 255);">）只匹配一个任意字符；如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配（比如 </span><code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">[0-9]</code><span style="line-height: 21px; background-color: rgb(255, 255, 255);"> 表示匹配所有 0 到 9 的数字）。</span><span style="line-height: 20px; white-space: pre-wrap;"><br/></span></span></div>
+<div><span style="line-height: 20px; white-space: pre-wrap; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="line-height: 21px; background-color: rgb(255, 255, 255);"> </span><code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">.gitignore</code><span style="line-height: 21px; background-color: rgb(255, 255, 255);"> 文件的<b style="font-size: 25px;">例子</b>：</span><span style="line-height: 20px; white-space: pre-wrap;"><br/></span></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;"><br/></span></div>
+<pre style="padding: 9.5px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; line-height: 20px; word-break: break-all; word-wrap: break-word; white-space: pre-wrap; background-color: rgb(245, 245, 245); border: 1px solid rgba(0, 0, 0, 0.14902);">
+<code style="padding: 0px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; background-color: transparent; border: 0px; font-size: 18px;"><font face="Microsoft YaHei"># 此为注释 – 将被 Git 忽略
+# 忽略所有 .a 结尾的文件
+*.a
+# 但 lib.a 除外
+!lib.a
+# 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
+/TODO
+# 忽略 build/ 目录下的所有文件
+build/
+# 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
+doc/*.txt</font></code>
+</pre>
+<h3 style="padding: 0px; line-height: 40px; text-rendering: optimizelegibility; background-color: rgb(255, 255, 255);"><span style="font-size: 36px;"><br/></span></h3>
+<h3 style="padding: 0px; line-height: 40px; text-rendering: optimizelegibility; background-color: rgb(255, 255, 255);"><span style="font-size: 36px;">八. 查看已暂存和未暂存的更新</span><br/></h3>
+<div><span style="font-size: 18px;"><span style="line-height: 21px; background-color: rgb(255, 255, 255);">当前做的哪些更新还没有暂存？有哪些更新已经暂存起来准备好了下次提交？ </span><code style="padding: 2px 4px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; white-space: nowrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">git diff</code><span style="line-height: 21px; background-color: rgb(255, 255, 255);"> 会使用文件补丁的格式显示具体添加和删除的行。</span><span style="line-height: 21px; background-color: rgb(255, 255, 255);"><br/></span></span></div>
+<div><span style="line-height: 21px; background-color: rgb(255, 255, 255); font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; font-size: 24px;"><b>8.1 查看暂存前后的变化 git diff</b></span></div>
+<div><span style="line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">要查看尚未暂存的文件更新了哪些部分，不加参数直接输入 git diff</span><span style="line-height: 21px;"><br/></span></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/2b03c162d9027fd8e3951e4a52bf2a5a.jpeg" height="155" width="441"/></span></div>
+<div><span style="line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; font-size: 24px;"><b>8.2 查看已暂存起来的变化 git diff --cached</b></span></div>
+<div><span style="line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255);"><span style="line-height: 21px;">若要看已经暂存起来的文件和上次提交时的快照之间的差异 git diff --cached</span></span><span style="line-height: 21px;"><br/></span></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/de5990f20a6802b50fa9b54fb2e1ed65.jpeg" height="322" width="490"/><span style="line-height: 21px; background-color: rgb(255, 255, 255);"><br/></span></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 36px;"><b>九. 提交更新 git commit</b></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><b>9.1 git commit需要添加注释，一般是git commit -m “注释"</b></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">如果直接运行git commit 会启动文本编辑器，一般都是vim或emacs,可以自己配置</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/37afe65ac8c1332dc733d7b1fd1aa044.jpeg" height="90" width="530"/><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><b>说明：  </b></span></div>
+<div><span style="font-size: 18px;"> </span></div>
+<div><span style="font-size: 18px;">当前分支  master    </span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 25px; font-size: 18px;">commit的 哈希值 e301c4e</span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 25px; font-size: 18px;">3个文件改变，添加行数，删除行数</span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 25px; font-size: 18px;">新建文件</span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 25px; font-size: 18px;"><br/></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;">提交时记录的是放在暂存区域的快照，任何还未暂存的仍然保持已修改状态，可以在下次提交时纳入版本管理。</span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">每一次运行提交操作，都是对你项目作一次快照，以后可以回到这个状态，或者进行比较</span><span style="background-color: rgb(255, 255, 255); line-height: 25px;"><br/></span></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 25px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><b>9.2 跳过使用暂存直接 commit</b><span style="background-color: rgb(255, 255, 255); line-height: 25px;"><br/></span></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">git commit -a 会把已跟踪过的文件暂存起来一并提交，从而跳过git add.   但是未跟踪过的文件就不可以这么用。</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">eg:修改test.txt后查看文件状态</span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/e4bf19217653d885f935d3361e68c0d7.jpeg" height="207" width="598"/><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">这个是已被跟踪的文件，直接commit</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/7ad7e0063dfe4f15aa2c1a1ab0bd2fc3.jpeg" height="55" width="618"/><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">如果未被跟踪的这样用就不可以</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/74f8487f4d9c7faff56c01248af27ea9.jpeg" height="193" width="622"/><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 36px;"><b>十. 移除文件 git rm</b></span><br/></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">要从 Git 中移除某个文件，就必须要从已跟踪文件清单中移除（确切地说，是从暂存区域移除），然后提交。</span><br/></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><br/></div>
+<div><span style="font-size: 18px;">1. 再从跟踪文件清单中删除</span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/9435573e435296cedf7c115a0337df0c.jpeg" height="154" width="461"/><br/></span></div>
+<div><span style="font-size: 18px;">2. git commit</span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/8afc2c68926fdf1d722298f778938ef2.jpeg" height="69" width="556"/><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 36px;"><b>十一. 移动文件 git mv</b></span><br/></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/d3da297ca61948d68fe26c86e6603f48.jpeg" height="139" width="509"/><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">运行git mv 其实就相当于运行了3条命令：   </span></div>
+<div><span style="font-size: 18px;">mv test.txt TEST</span></div>
+<div><span style="font-size: 18px;">git rm test.txt</span></div>
+<div><span style="font-size: 18px;">git add TEST<br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 36px;">十二. 查看提交历史 git log</span><br/></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">按提交时间列出所有更新: git log</span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/55a8d233cffce5a05cbb50fc0ed2c0ba.jpeg" height="310" width="401"/><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">指定显示最近几次的提交内容差异 git log -p -&lt;number&gt;</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/4a4083f2974f6fd2b91f72e9a0632719.jpeg" height="448" width="460"/><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">显示增改行数统计: git log --stat</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/f72f5d3f724c9787ada7783a3d8e4349.jpeg" height="271" width="490"/><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">丰富log显示信息： <a href="http://blog.csdn.net/wirelessqa/article/details/8581773">http://blog.csdn.net/wirelessqa/article/details/8581773</a></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/ded6aec91b28a4ab7ba2f978fd3bfc8f.jpeg" height="261" width="571"/>  </span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">git自带的图形化客户端，查看和管理版本变动</span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/66402d8c28817cf701dc138d0ca64907.jpeg" height="462" width="692"/><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 36px;"><b>十二. Git撤消操作</b></span><br/></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 24px;"><b>12.1 修改最后一次提交 git commit --amend</b></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">1.新建一个文件 2.提交一个之前的更改</span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/b9b49966730cca86bcf4ff09a952ea12.jpeg" height="87" width="514"/><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">3. 跟踪这个文件  4.跟前一次一起提交</span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/96803f52a117dea10e3a202db9bcfa8c.jpeg" height="40" width="498"/><br/></span></div>
+<div><span style="font-size: 18px;">提示你是否重新编辑提交说明，如果不编辑退出后还是跟之前一样提交</span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/1481b0567b8ae187854ae2390641728f.jpeg" height="256" width="505"/><br/></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/1ff84c8be0d7a1e6dbcf85ce2abfa90c.jpeg" height="66" width="380"/><br/></span></div>
+<div><span style="font-size: 18px;">commit 成功</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">或 git commit -m “”  可以直接提交</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 24px;"><b>12.2 撤消已暂存的文件 git reset HEAD &lt;file&gt;</b></span><br/></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#新建两个文件</font></span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ touch 1txt</span>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ touch 2txt</span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#全部暂存</font></span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ git add .</span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#查看文件状态</font></span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ git status</span></div>
+<div><span style="font-size: 18px;"># On branch master</span></div>
+<div><span style="font-size: 18px;"># Your branch is ahead of 'origin/master' by 1 commit.</span></div>
+<div><span style="font-size: 18px;">#   (use "git push" to publish your local commits)</span></div>
+<div><span style="font-size: 18px;">#</span></div>
+<div><span style="font-size: 18px;"># Changes to be committed:</span></div>
+<div><span style="font-size: 18px;">#   (use "git reset HEAD &lt;file&gt;..." to unstage)</span></div>
+<div><span style="font-size: 18px;">#</span></div>
+<div><span style="font-size: 18px;">#     new file:   1txt</span></div>
+<div><span style="font-size: 18px;">#     new file:   2txt</span></div>
+<div><span style="font-size: 18px;"># <br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#取消暂存 1txt</font></span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ git reset HEAD 1txt</span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#再次查看文件状态，1txt 已经被取消啦</font><br/></span>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ git status</span></div>
+<div><span style="font-size: 18px;"># On branch master</span></div>
+<div><span style="font-size: 18px;"># Your branch is ahead of 'origin/master' by 1 commit.</span></div>
+<div><span style="font-size: 18px;">#   (use "git push" to publish your local commits)</span></div>
+<div><span style="font-size: 18px;">#</span></div>
+<div><span style="font-size: 18px;"># Changes to be committed:</span></div>
+<div><span style="font-size: 18px;">#   (use "git reset HEAD &lt;file&gt;..." to unstage)</span></div>
+<div><span style="font-size: 18px;">#</span></div>
+<div><span style="font-size: 18px;">#     new file:   2txt</span></div>
+<div><span style="font-size: 18px;">#</span></div>
+<div><span style="font-size: 18px;"># Untracked files:</span></div>
+<div><span style="font-size: 18px;">#   (use "git add &lt;file&gt;..." to include in what will be committed)</span></div>
+<div><span style="font-size: 18px;">#</span></div>
+<div><span style="font-size: 18px;">#     1txt <br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 24px;"><b>12.3 撤消对文件的修改 git checkout -- &lt;file&gt;</b></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ ls</span>
+<div><span style="font-size: 18px;">README          TEST            android-package ios-package     testamend</span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#修改文件testmend</font></span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ vim testamend</span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ git status</span></div>
+<div><span style="font-size: 18px;"># On branch master</span></div>
+<div><span style="font-size: 18px;"># Your branch is ahead of 'origin/master' by 1 commit.</span></div>
+<div><span style="font-size: 18px;">#   (use "git push" to publish your local commits)</span></div>
+<div><span style="font-size: 18px;">#</span></div>
+<div><span style="font-size: 18px;"># Changes not staged for commit:</span></div>
+<div><span style="font-size: 18px;">#   (use "git add &lt;file&gt;..." to update what will be committed)</span></div>
+<div><span style="font-size: 18px;">#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span></div>
+<div><span style="font-size: 18px;">#</span></div>
+<div><span style="font-size: 18px;">#     modified:   testamend</span></div>
+<div><span style="font-size: 18px;">#</span></div>
+<div><span style="font-size: 18px;">no changes added to commit (use "git add" and/or "git commit -a”)</span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#撤消文件的修改</font></span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ git checkout -- testamend</span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ git status</span></div>
+<div><span style="font-size: 18px;"># On branch master</span></div>
+<div><span style="font-size: 18px;"># Your branch is ahead of 'origin/master' by 1 commit.</span></div>
+<div><span style="font-size: 18px;">#   (use "git push" to publish your local commits)</span></div>
+<div><span style="font-size: 18px;">#</span></div>
+<div><span style="font-size: 18px;">nothing to commit, working directory clean </span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 24px;"><b>12.4 Git撤消commit</b></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">1. git log查看日志，<span style="background-color: rgb(255, 255, 255); line-height: 25.1875px;">找到需要回退的那次commit的 哈希值</span></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/7ce2edf9c6f8cf74aabf45f2dc8a7134.jpeg" height="115" width="405"/></span></div>
+<div><span style="font-size: 18px;">2. <span style="background-color: rgb(255, 255, 255); line-height: 25.1875px;">git reset --hard commit_id </span></span></div>
+<div><span style="font-size: 18px;"><img src="03.%20Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.resources/a9d864878af3d73df00dd316d8097859.jpeg" height="88" width="768"/> </span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 24px;"><b>12.5 Git版本回退</b></span><br/></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#查看log</font></span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ git log</span>
+<div><span style="font-size: 18px;">commit 047cd2d2f6bd1ecdcdb4854b728300aeaa314b80</span></div>
+<div><span style="font-size: 18px;">Author: 小朋 &lt;<a href="mailto:xiaopeng.bxp@alibaba-inc.com">xiaopeng.bxp@****.com</a>&gt;</span></div>
+<div><span style="font-size: 18px;">Date:   Thu Jan 2 22:26:50 2014 +0800</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">    1test</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">commit fa7fd8d49f3789d39aa3cc52cd81e09e6d061719</span></div>
+<div><span style="font-size: 18px;">Author: 小朋 &lt;<a href="mailto:xiaopeng.bxp@alibaba-inc.com">xiaopeng.bxp@</a></span><a href="mailto:xiaopeng.bxp@alibaba-inc.com" style="font-size: 18px;">****</a><a href="mailto:xiaopeng.bxp@alibaba-inc.com" style="font-size: 18px;">.com</a><span style="font-size: 18px;">&gt;</span></div>
+<div><span style="font-size: 18px;">Date:   Tue Dec 31 13:29:45 2013 +0800</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">    delete test2</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">commit 746f92258e2bc65c46f77f37315f577091192885</span></div>
+<div><span style="font-size: 18px;">Author: 小朋 &lt;<a href="mailto:xiaopeng.bxp@alibaba-inc.com">xiaopeng.bxp@</a></span><a href="mailto:xiaopeng.bxp@alibaba-inc.com" style="font-size: 18px;">****</a><a href="mailto:xiaopeng.bxp@alibaba-inc.com" style="font-size: 18px;">.com</a><span style="font-size: 18px;">&gt;</span></div>
+<div><span style="font-size: 18px;">Date:   Tue Dec 31 13:22:07 2013 +0800</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">    test git commit -a <br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">…..</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">HEAD是指向最新的提交，上一次提交是HEAD^,上上次是HEAD^^,也可以写成HEAD～2 ,依次类推</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#放弃本地所有修改，回退到上一个版本</font></span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ git reset --hard HEAD^</span>
+<div><span style="font-size: 18px;">HEAD is now at fa7fd8d delete test2</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#注： --hard 表示放弃所有本地改动</font><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">#再次查看log</span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ git log</span>
+<div><span style="font-size: 18px;">commit fa7fd8d49f3789d39aa3cc52cd81e09e6d061719</span></div>
+<div><span style="font-size: 18px;">Author: 小朋 &lt;<a href="mailto:xiaopeng.bxp@alibaba-inc.com">xiaopeng.bxp@</a></span><a href="mailto:xiaopeng.bxp@alibaba-inc.com" style="font-size: 18px;">****</a><a href="mailto:xiaopeng.bxp@alibaba-inc.com" style="font-size: 18px;">.com</a><span style="font-size: 18px;">&gt;</span></div>
+<div><span style="font-size: 18px;">Date:   Tue Dec 31 13:29:45 2013 +0800</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">    delete test2</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">commit 746f92258e2bc65c46f77f37315f577091192885</span></div>
+<div><span style="font-size: 18px;">Author: 小朋 &lt;<a href="mailto:xiaopeng.bxp@alibaba-inc.com">xiaopeng.bxp@</a></span><a href="mailto:xiaopeng.bxp@alibaba-inc.com" style="font-size: 18px;">****</a><a href="mailto:xiaopeng.bxp@alibaba-inc.com" style="font-size: 18px;">.com</a><span style="font-size: 18px;">&gt;</span></div>
+<div><span style="font-size: 18px;">Date:   Tue Dec 31 13:22:07 2013 +0800</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">    test git commit -a</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">commit e301c4e185b0937d1ce9484ea86ab401e95c976c</span></div>
+<div><span style="font-size: 18px;">Author: 小朋 &lt;<a href="mailto:xiaopeng.bxp@alibaba-inc.com">xiaopeng.bxp@</a></span><a href="mailto:xiaopeng.bxp@alibaba-inc.com" style="font-size: 18px;">****</a><a href="mailto:xiaopeng.bxp@alibaba-inc.com" style="font-size: 18px;">.com</a><span style="font-size: 18px;">&gt;</span></div>
+<div><span style="font-size: 18px;">Date:   Tue Dec 31 13:14:42 2013 +0800</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">    just test <br/></span></div>
+<div><span style="font-size: 18px;">………..</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#FF40FF">回退到指定的版本  git reset --hard &lt;哈希值&gt; </font></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ git reset --hard 746f92258e2bc65c46f77f37315f577091192885</span>
+<div><span style="font-size: 18px;">HEAD is now at 746f922 test git commit -a <br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<p><span style="font-size: 24px;"><b>12.6 撤消未跟踪文件</b></span></p>
+<p><span style="font-size: 18px;">git clean -dxf</span></p>
+<p><span style="font-size: 18px;">「举个例子」</span></p>
+<p><span style="font-size: 18px;">清除所有未跟踪文件，包括纳入ignored的文件。如果要保留ignored的文件修改，使用参数-df</span></p>
+<p><span style="font-size: 18px;">＃清除所有未跟踪文件，包括纳入ignored的文件</span></p>
+<p><span style="font-size: 18px;">bixiaopeng@bixiaopeng-To-be-filled-by-O-E-M:~/workspace2/spark$ git clean -dxf<br clear="none"/>
+正删除 .idea/<br clear="none"/>
+正删除 .package.sh.swp<br clear="none"/>
+正删除 assets/sparklog/<br clear="none"/>
+正删除 backup-config/AndroidManifest.xml<br clear="none"/>
+正删除 backup-config/channel_config.xml<br clear="none"/>
+正删除 backup-res/assets/<br clear="none"/>
+正删除 backup-res/res/<br clear="none"/>
+正删除 debug<br clear="none"/>
+正删除 package/spark_2.4_L95_91zhuomian.apk<br clear="none"/>
+正删除 res/values/channel_config.xmlg<br clear="none"/>
+正删除 target/<br clear="none"/>
+正删除 xiamimusic.iml</span></p>
+<p><span style="font-size: 18px;">＃再查看一下未跟踪的文件已经被撤消了<br clear="none"/>
+bixiaopeng@bixiaopeng-To-be-filled-by-O-E-M:~/workspace2/spark$ git status<br clear="none"/>
+# 位于分支 test<br clear="none"/>
+# 尚未暂存以备提交的变更：<br clear="none"/>
+# （使用 "git add &lt;file&gt;..." 更新要提交的内容）<br clear="none"/>
+# （使用 "git checkout -- &lt;file&gt;..." 丢弃工作区的改动）<br clear="none"/>
+#<br clear="none"/>
+# 修改： pom.xml<br clear="none"/>
+#<br clear="none"/>
+修改尚未加入提交（使用 "git add" 和/或 "git commit -a"）｀</span></p>
+<div><br/></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 36px;"><b>十三. 远程仓库的使用</b></span></div>
+<div><br/></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#查看当前项目有哪些远程仓库 git remote </font></span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ git remote</span>
+<div><span style="font-size: 18px;">origin</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#</font><span style="line-height: 26px; background-color: rgb(255, 255, 255);"><font color="#0433FF">查看远程仓库 git remote -v </font><br/></span>bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ git remote -v</span></div>
+<div><span style="font-size: 18px;">origin     git@gitlab.alibaba-inc.com:xiaopeng.bxp/wirelessqa.git (fetch)</span></div>
+<div><span style="font-size: 18px;">origin     git@gitlab.alibaba-inc.com:xiaopeng.bxp/wirelessqa.git (push)</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#查看远程仓库信息 git remote -v &lt;remote-name&gt;</font></span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro wirelessqa$ git remote show origin</span>
+<div><span style="font-size: 18px;">* remote origin</span></div>
+<div><span style="font-size: 18px;">  Fetch URL: git@gitlab.alibaba-inc.com:xiaopeng.bxp/wirelessqa.git</span></div>
+<div><span style="font-size: 18px;">  Push  URL: git@gitlab.alibaba-inc.com:xiaopeng.bxp/wirelessqa.git</span></div>
+<div><span style="font-size: 18px;">  HEAD branch: master</span></div>
+<div><span style="font-size: 18px;">  Remote branch:</span></div>
+<div><span style="font-size: 18px;">    master tracked</span></div>
+<div><span style="font-size: 18px;">  Local branch configured for 'git pull':</span></div>
+<div><span style="font-size: 18px;">    master merges with remote master</span></div>
+<div><span style="font-size: 18px;">  Local ref configured for 'git push':</span></div>
+<div><span style="font-size: 18px;">    master pushes to master (local out of date) <br/></span></div>
+<p style="padding: 0px; line-height: 26px; background-color: rgb(255, 255, 255);"><span style="font-size: 18px;"><font color="#0433FF">#添加远程仓库：$ git remote add [remote-name] [url]</font></span></p>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro robotium$ git remote add test git://github.com/paulboone/ticgit.git</span>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro robotium$ git remote -v</span></div>
+<div><span style="font-size: 18px;">origin     <a href="https://github.com/RobotiumTech/robotium">https://github.com/RobotiumTech/robotium</a> (fetch)</span></div>
+<div><span style="font-size: 18px;">origin     <a href="https://github.com/RobotiumTech/robotium">https://github.com/RobotiumTech/robotium</a> (push)</span></div>
+<div><span style="font-size: 18px;">test     git://github.com/paulboone/ticgit.git (fetch)</span></div>
+<div><span style="font-size: 18px;">test     git://github.com/paulboone/ticgit.git (push)</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"> <br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#删除远程仓库：$ git remote rm [remote-name]</font></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro robotium$ git remote rm test</span>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro robotium$ git remote -v</span></div>
+<div><span style="font-size: 18px;">origin     <a href="https://github.com/RobotiumTech/robotium">https://github.com/RobotiumTech/robotium</a> (fetch)</span></div>
+<div><span style="font-size: 18px;">origin     <a href="https://github.com/RobotiumTech/robotium">https://github.com/RobotiumTech/robotium</a> (push)</span></div>
+<div><span style="font-size: 18px;"> <br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#修改远程仓库：$ git remote set-url --push [remote-name] [newUrl]</font></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF"><br/></font></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#重命名远程仓库  $ git remote rename &lt;old-remote-name&gt; &lt;new-remote-name&gt;</font></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF"><br/></font></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#从远程仓库抓取数据 : $git fetch [remote-name]</font></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">说明：</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">1. <span style="background-color: rgb(255, 255, 255); line-height: 21px;">此命令会到远程仓库中拉取所有你本地仓库中还没有的数据。运行完成后，你就可以在本地访问该远程仓库中的所有分支</span></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">2. </span><span style="background-color: rgb(255, 255, 255); line-height: 21px;">fetch 命令只是将远端的数据拉到本地仓库，并不自动合并到当前工作分支，只有当你确实准备好了，才能手工合并</span></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#拉取远程仓库：$ git pull [remote-name] [本地分支名]</font></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">说明： </span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">一般我们获取代码更新都是用git pull, 目的是从原始克隆的远端仓库中抓取数据后，合并到工作目录中的当前分支</span><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">#推送远程仓库：$ git push [remote-name] [本地分支名]</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 21px; font-size: 18px;">说明： 只有在所克隆的服务器上有写权限，或者同一时刻没有其他人在推数据，这条命令才会如期完成任务。</span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 21px;">如果在你推数据前，已经有其他人推送了若干更新，那你的推送操作就会被驳回。你必须先把他们的更新抓取到本地git pull，合并到自己的项目中，然后才可以再次推送。</span><br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><b><span style="line-height: 26px; background-color: rgb(255, 255, 255);">[举个例子]:</span></b></span></div>
+<div><span style="font-size: 18px;"><b><span style="background-color: rgb(255, 255, 255); line-height: 26px;">*如果想把本地的某个分支test提交到远程仓库，并作为远程仓库的master分支，或者作为另外一个名叫test的分支，如下：</span></b></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<p style="padding: 0px; line-height: 26px; background-color: rgb(255, 255, 255);"><span style="font-size: 18px;">$git push origin test:master         // 提交本地test分支作为远程的master分支</span></p>
+<span style="line-height: 26px; background-color: rgb(255, 255, 255); font-size: 18px;">$git push origin test:test              // 提交本地test分支作为远程的test分支</span>
+<div><span style="font-size: 18px;"><br style="line-height: 26px; background-color: rgb(255, 255, 255);"/>
+<br/></span></div>
+<h2><span style="font-size: 36px;">十四. 应用标签</span></h2>
+<div><span style="font-size: 21px;"><b><br/></b></span></div>
+<div><span style="font-size: 21px;"><b>Git tag参数：</b></span></div>
+<p style="font-size: 7px;"><span style="font-size: 12px;">用法：git tag [-a|-s|-u &lt;key-id&gt;] [-f] [-m &lt;说明&gt;|-F &lt;文件&gt;] &lt;标签名&gt; [&lt;头&gt;]<br clear="none"/>
+或：git tag -d &lt;标签名&gt;...<br clear="none"/>
+或：git tag -l [-n[&lt;num&gt;]] [--contains &lt;提交&gt;] [--points-at &lt;对象&gt;] <br clear="none"/>
+[&lt;模式&gt;...]<br clear="none"/>
+或：git tag -v &lt;标签名&gt;...</span></p>
+<p style="font-size: 7px;"><span style="font-size: 12px;">-l, --list 列出tag名称<br clear="none"/>
+-n[&lt;n&gt;] 每个 tag 信息打印 &lt;n&gt; 行<br clear="none"/>
+-d, --delete 删除 tags<br clear="none"/>
+-v, --verify 验证 tags</span></p>
+<p style="font-size: 7px;"><span style="font-size: 12px;">Tag 创建选项<br clear="none"/>
+-a, --annotate 注解 tag，需要一个说明<br clear="none"/>
+-m, --message &lt;说明&gt; tag 说明<br clear="none"/>
+-F, --file &lt;文件&gt; 从文件中读取提交说明<br clear="none"/>
+-s, --sign 注解并 GPG 签名的 tag<br clear="none"/>
+--cleanup &lt;模式&gt; 设置如何删除提交说明里的空格和#注释<br clear="none"/>
+-u, --local-user &lt;key id&gt;<br clear="none"/>
+使用另外的私钥签名 tag<br clear="none"/>
+-f, --force 如果存在，替换现有的 tag<br clear="none"/>
+--column[=&lt;风格&gt;] 以列的方式显示 tag</span></p>
+<p style="font-size: 7px;"><span style="font-size: 12px;">Tag 列表选项<br clear="none"/>
+--contains &lt;提交&gt; 只打印包含提交的tags<br clear="none"/></span></p>
+<div><span style="font-size: 18px;"><span style="font-size: 12px;">--points-at &lt;对象&gt; 只打印tags对象</span> <br/></span></div>
+<div><br/></div>
+<div><font color="#424242" style="font-size: 24px;"><b><br/></b></font></div>
+<div><font color="#424242" style="font-size: 24px;"><b><br/></b></font></div>
+<div><font color="#424242" style="font-size: 24px;"><b>14.1 查看标签</b></font></div>
+<p><span style="font-size: 18px;">git tag –l &lt;name&gt; ， &lt;name&gt;支持通配符</span></p>
+<p><span style="font-size: 18px;"><font color="#0433FF">#查看某个tag</font></span></p>
+<p><span style="font-size: 18px;">bixiaopeng@bixiaopeng-To-be-filled-by-O-E-M:~/workspace2/spark$ git tag -l v2.2<br clear="none"/>
+v2.2</span></p>
+<p><span style="font-size: 18px;"><font color="#0433FF">＃列出所有的tag名称</font></span></p>
+<p><span style="font-size: 18px;">bixiaopeng@bixiaopeng-To-be-filled-by-O-E-M:~/workspace2/spark$ git tag -l<br clear="none"/>
+v2.2</span></p>
+<p><span style="font-size: 18px;"><font color="#0433FF">＃查看某个tag的详情(有问题)</font></span></p>
+<p><span style="font-size: 18px;">bixiaopeng@bixiaopeng-To-be-filled-by-O-E-M:~/workspace2/spark$ git tag -v v2.2<br clear="none"/>
+object 2c2e8b14d37d26c85fd07a5d21620f51eaad01fe<br clear="none"/>
+type commit<br clear="none"/>
+tag v2.2<br clear="none"/>
+tagger xiaopeng.bxp &lt;xiaopeng.bxp@****.com&gt; 1378099160 +0800</span></p>
+<p><span style="font-size: 18px;">Release version v2.2</span></p>
+<p><br/></p>
+<p><span style="font-size: 24px;"><b>14.2. 新建标签</b></span></p>
+<p><span style="font-size: 18px;">git tag –a&lt;name&gt;  -m &lt;detail message&gt;</span></p>
+<p><span style="font-size: 18px;">如果是需要给某个历史提交节点打标签，则加上对应hashcode即可</span></p>
+<p><span style="font-size: 18px;"><font color="#0433FF">#1. 新建一个tag</font></span></p>
+<p><span style="font-size: 18px;">bixiaopeng@bixiaopeng-To-be-filled-by-O-E-M:~/workspace2/spark$ git tag -a v2.2 -m "Release version v2.2"<br clear="none"/>
+bixiaopeng@bixiaopeng-To-be-filled-by-O-E-M:~/workspace2/spark$ git tag -l<br clear="none"/>
+v2.2</span></p>
+<p><span style="font-size: 18px;"><font color="#0433FF">#2. 把新建的分支push到远程</font></span></p>
+<p><span style="font-size: 18px;">bixiaopeng@bixiaopeng-To-be-filled-by-O-E-M:~/workspace2/spark$ git push origin v2.2<br clear="none"/>
+Counting objects: 1, done.<br clear="none"/>
+Writing objects: 100% (1/1), 169 bytes | 0 bytes/s, done.<br clear="none"/>
+Total 1 (delta 0), reused 0 (delta 0)<br clear="none"/>
+remote: To git@mirror.gitlab.alibaba-inc.com:/home/git/repositories/sospartan/spark.git<br clear="none"/>
+remote: * [new tag] v2.2 -&gt; v2.2<br clear="none"/>
+To git@gitlab.alibaba-inc.com:sospartan/spark.git<br clear="none"/>
+* [new tag] v2.2 -&gt; v2.2</span></p>
+<p><span style="font-size: 18px;">＃扩展阅读</span></p>
+<div><span style="font-size: 18px;">$ git push origin –tags # 将本地所有标签一次性提交到git服务器</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<p><span style="font-size: 24px;"><b>14.3. 删除标签</b></span></p>
+<p><span style="font-size: 18px;">git tag –d&lt;name&gt;</span></p>
+<p><span style="font-size: 18px;"><font color="#0433FF">＃1. 删除本地tag v2.2</font></span></p>
+<p><span style="font-size: 18px;">bixiaopeng@bixiaopeng-To-be-filled-by-O-E-M:~/workspace2/spark$ git tag -d v2.2<br clear="none"/>
+已删除 tag 'v2.2'（曾为 78fa3cc）<br clear="none"/>
+bixiaopeng@bixiaopeng-To-be-filled-by-O-E-M:~/workspace2/spark$ git tag -l<br clear="none"/>
+<a shape="rect" href="mailto:bixiaopeng@bixiaopeng-To-be-filled-by-O-E-M:~/workspace2/spark$">bixiaopeng@bixiaopeng-To-be-filled-by-O-E-M:~/workspace2/spark$</a></span></p>
+<p><span style="font-size: 18px;"><font color="#0433FF">＃2. 删除远程tag</font></span></p>
+<p><span style="font-size: 18px;">bixiaopeng@bixiaopeng-To-be-filled-by-O-E-M:~/workspace2/spark$ git push origin :v2.2<br clear="none"/>
+remote: To git@mirror.gitlab.alibaba-inc.com:/home/git/repositories/sospartan/spark.git<br clear="none"/>
+remote: - [deleted] v2.2<br clear="none"/>
+To git@gitlab.alibaba-inc.com:sospartan/spark.git<br clear="none"/>
+- [deleted] v2.2</span></p>
+<p><span style="font-size: 18px;">值得注意的是，如果tag名字和分支名字一样的时候，push需要指定<code>refs</code>的详细路径，因为分支和<code>tag</code>在git内部是这样表示的（只是引用），<code>tag</code>只存储所指向的那一次提交：</span></p>
+<pre>
+<font face="Microsoft YaHei"><span style="font-size: 18px;">refs/tags/{tagnane} refs/heads/branches/{branchnane} </span></font>
+</pre>
+<p><span style="font-size: 18px;">所以要这样<code>push</code>相同名字的<code>tag</code>和分支</span></p>
+<pre>
+<font face="Microsoft YaHei"><span style="font-size: 18px;">$: git push origin refs/tags/product <br clear="none"/>$: git push origin refs/heads/branches/product </span></font>
+</pre>
+<pre>
+<font face="Microsoft YaHei"><span style="font-size: 18px;"><br/></span></font>
+</pre>
+<p><font style="font-size: 24px;"><b>14.4. 提交标签</b></font></p>
+<p><span style="font-size: 18px;">git push origin &lt;分支名&gt;&lt;tag name&gt;</span></p>
+<p><span style="font-size: 24px;"><b>14.5. 恢复代码到某个标签点</b></span></p>
+<p><span style="font-size: 18px;">git show&lt;tagname&gt;   由此得到对应的提交哈希值，然后git reset 回退代码</span></p>
+<p><span style="font-size: 18px;"> </span></p>
+<p><br/></p>
+<div><span style="font-size: 36px;"><b>十五. Git branch 分支</b></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#查看当前有哪些branch</font></span><br/>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git branch</span></div>
+<div><span style="font-size: 18px;">* master</span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#新建一个branch  xm2.x</font></span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git branch xm2.x</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#切换到一个branch </font></span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git checkout xm2.x</span></div>
+<div><span style="background-color: rgb(255, 255, 255); line-height: 26px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><span style="background-color: rgb(255, 255, 255); line-height: 26px;"><font color="#0433FF">#新建并且切换到该branch,例: xm2.x</font></span></span></div>
+<div style="text-align: -webkit-auto;"><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$<span style="background-color: rgb(255, 255, 255);"> </span><span style="background-color: rgb(255, 255, 255); line-height: 18px;">git checkout -b xm2.x</span></span></div>
+<div style="text-align: -webkit-auto;"><span style="font-size: 18px;"><br/></span></div>
+<div style="text-align: -webkit-auto;"><span style="background-color: rgb(255, 255, 255); line-height: 18px; font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#再次查看</font></span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git branch</span></div>
+<div><span style="font-size: 18px;">* master</span></div>
+<span style="font-size: 18px;">  xm2.x</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#<span style="line-height: 26px; background-color: rgb(255, 255, 255);">添加一个文件到你的repo</span></font></span></div>
+<div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git add bixiaopeng.txt<span style="line-height: 26px;"><br/></span></span></div>
+<div><span style="font-size: 18px;">#添加所有的文件 git add .</span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git add .</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#commit一个文件</font></span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git commit -m "bixiaopeng test case"<br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF"># commit到本地</font><br/></span>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git commit -a -m "xm2.x test case"</span></div>
+<div><span style="font-size: 18px;">[xm2.x f78f430] xm2.x test case</span></div>
+<div><span style="font-size: 18px;"> 39 files changed, 384 insertions(+)</span></div>
+<div><span style="font-size: 18px;"> create mode 100644 AndroidManifest.xml</span></div>
+<div><span style="font-size: 18px;">………….</span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#查看几次commit的区别</font></span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git diff<br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#将branch push到远程</font></span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git push origin xm2.x</span></div>
+<div><span style="font-size: 18px;">Counting objects: 78, done.</span></div>
+<div><span style="font-size: 18px;">Delta compression using up to 8 threads.</span></div>
+<div><span style="font-size: 18px;">Compressing objects: 100% (51/51), done.</span></div>
+<div><span style="font-size: 18px;">Writing objects: 100% (77/77), 565.97 KiB, done.</span></div>
+<div><span style="font-size: 18px;">Total 77 (delta 3), reused 0 (delta 0)</span></div>
+<div><span style="font-size: 18px;">remote: To git@mirror.gitlab.alibaba-inc.com:/home/git/repositories/xiaopeng.bxp/xmrobotium.git</span></div>
+<div><span style="font-size: 18px;">remote:  * [new branch]      xm2.x -&gt; xm2.x</span></div>
+<div><span style="font-size: 18px;">To git@gitlab.alibaba-inc.com:xiaopeng.bxp/xmrobotium.git</span></div>
+<div><span style="font-size: 18px;"> * [new branch]      xm2.x -&gt; xm2.x<br/></span></div>
+</div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#查看远程分支</font></span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git branch -r</span>
+<div><span style="font-size: 18px;">  origin/master</span></div>
+<div><span style="font-size: 18px;">  origin/xm2.x</span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#查看本地和远程分支</font></span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git branch -a</span></div>
+<div><span style="font-size: 18px;">  master</span></div>
+<div><span style="font-size: 18px;">* xm2.x</span></div>
+<div><span style="font-size: 18px;">  remotes/origin/master</span></div>
+<div><span style="font-size: 18px;">  remotes/origin/xm2.x<br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#修改branch的名字</font></span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git branch -m xm2.x test2.x</span>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git branch -r</span></div>
+<div><span style="font-size: 18px;">  origin/master</span></div>
+<div><span style="font-size: 18px;">  origin/xm2.x</span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#查看本地和远程所有的分支</font></span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git branch -a</span></div>
+<div><span style="font-size: 18px;">  master</span></div>
+<div><span style="font-size: 18px;">* test2.x</span></div>
+<div><span style="font-size: 18px;">  remotes/origin/master</span></div>
+<div><span style="font-size: 18px;">  remotes/origin/xm2.x<br/></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;"><font color="#0433FF">#删除远程分支</font></span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git push origin --delete xm2.x</span>
+<div><span style="font-size: 18px;">remote: To git@mirror.gitlab.alibaba-inc.com:/home/git/repositories/xiaopeng.bxp/xmrobotium.git</span></div>
+<div><span style="font-size: 18px;">remote:  - [deleted]         xm2.x</span></div>
+<div><span style="font-size: 18px;">To git@gitlab.alibaba-inc.com:xiaopeng.bxp/xmrobotium.git</span></div>
+<div><span style="font-size: 18px;"> - [deleted]         xm2.x</span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git branch -r</span></div>
+<div><span style="font-size: 18px;">  origin/master</span></div>
+<div><span style="font-size: 18px;">  origin/test2.x <br/></span></div>
+<div><span style="line-height: 21px; font-size: 18px;"><br/></span></div>
+<div><span style="line-height: 21px; font-size: 18px;"><br/></span></div>
+<span style="line-height: 28px; background-color: rgb(255, 255, 255); font-size: 36px;"><b>十六. Git 合并分支</b></span>
+<div><span style="background-color: rgb(255, 255, 255);"><span style="line-height: 28px; font-size: 18px;"><br/></span></span></div>
+<div><span style="background-color: rgb(255, 255, 255);"><span style="line-height: 28px; font-size: 18px;">首先切换到想要合并到的分枝下，运行'git merge’命令</span></span></div>
+<div><span style="line-height: 28px; background-color: rgb(255, 255, 255); font-size: 18px;">（例如本例中将test2.x分支合并到xm3.0分支的话，进入xm3.0分支运行git merge test2.x命令）如果合并顺利的话：</span></div>
+<div><span style="line-height: 28px; background-color: rgb(255, 255, 255); font-size: 18px;">#确保当前分支为xm3.0</span></div>
+<span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git status</span>
+<div><span style="font-size: 18px;"># On branch xm3.0</span></div>
+<div><span style="font-size: 18px;">nothing to commit, working directory clean</span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git branch</span></div>
+<div><span style="font-size: 18px;">  master</span></div>
+<div><span style="font-size: 18px;">  test2.x</span></div>
+<div><span style="font-size: 18px;">* xm3.0</span></div>
+<div><span style="font-size: 18px;">bixiaopeng@bixiaopengtekiMacBook-Pro xmrobotium$ git merge test2.x</span></div>
+<div><span style="font-size: 18px;">Already up-to-date. <span style="line-height: 28px; background-color: rgb(255, 255, 255);"><br/></span></span></div>
+<div><span style="font-size: 18px;"><br/></span></div>
+<div><span style="font-size: 18px;">合并冲突处理：</span></div>
+<div><span style="background-color: rgb(0, 0, 0); line-height: 28px;"><span style="font-size: 18px;"><font color="#FFD479">Automatic merge failed; fix conflicts and then commit the result</font>.</span></span><br/></div>
+<div><br/></div>
+<div><span style="font-size: 18px;"><span style="line-height: 28px;">修改冲突的文件后，git add 文件   然后，git commit</span><span style="line-height: 21px;"><br/></span></span></div>
+<div><br/></div>
+</div>
+<div><br/></div>
+<div><span style="text-align: center; font-size: 14px;">作者：毕小朋       博客：<a href="http://blog.csdn.net/wirelessqa">http://blog.csdn.net/wirelessqa</a></span><span style="text-align: center; font-size: 36px;">   </span> <span style="text-align: center; font-size: 14px;">邮箱：wirelessqa.me@gmail.com    日期: 2014.1.5<span style="-evernote-last-insertion-point:true;"/></span><br/></div>
+<div><br/></div>
+</body></html>
