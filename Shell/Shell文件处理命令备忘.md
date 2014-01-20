@@ -143,4 +143,11 @@ fi
 ```
 
 
+## 编码格式转换
+
+可以直接用iconv命令
+
+    iconv -f UTF-16 -t UTF-8 src.txt > srcutf8.txt
+
+如果是excel文件转utf8可以先另存.xls为utf-16的文本文件，再转换成utf8
 
