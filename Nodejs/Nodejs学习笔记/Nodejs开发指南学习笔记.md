@@ -51,6 +51,10 @@ express -e -s project_name
 ```
 使项目支持ejs和sessions
 
+提示：
+
+使用 supervisor 实现监视代码修改和自动重启
+
 
 
 
