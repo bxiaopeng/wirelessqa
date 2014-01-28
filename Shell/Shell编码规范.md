@@ -2,10 +2,10 @@
 
 
 ```
-作   者: http://www.ohlinux.com/archives/191/
+作   者: 毕小朋
 用   途: 规范Shell代码书写，方便查看与修改
 转载时间: 2014.1.12
-老毕博客: blog.csdn.net/wirelessqa
+参   考: http://www.ohlinux.com/archives/191/（大多出自此次处）
 ```
 
 ### 1 概述
@@ -192,3 +192,66 @@ while 循环的所有初始化代码应该紧贴在进入 while 循环之前， 
 
 参考资料：借鉴了仙人掌的规范 http://www.linuxdiyf.com/bbs/thread-106301-1-1.html
 
+
+完整单词	|缩写
+--------|--
+A | 	 
+average|avg
+B|	 
+back|	bk
+background	|bg
+break|	brk
+buffer|	buf
+C	| 
+color|	cr,clr
+control|	ctrl
+D	| 
+data	|dat
+delete|	del
+document	|doc
+E	 |
+edit|	edt
+error|	err
+escape|	esc
+F	 |
+flag|	flg
+form|	frm
+G|	 
+grid|	grd
+I	 |
+increment|	inc
+information	|info
+initial|	init
+insert|	ins
+image|	img
+L	| 
+lable	|lab
+length|	len
+list|	lst
+library|	lib
+M	 |
+manager|	mgr,mngr
+message|	msg
+O|	 
+Oracle|	Ora
+P|	 
+panorama|	pano
+password|	pwd
+picture|	pic
+point|	pt
+position|	pos
+print|	prn
+program	|prg
+S|	 
+server|	srv
+source|	src
+statistic	|stat
+string	|str
+Sybase	|Syb
+T	| 
+temp|	tmp
+text	|txt
+U|	 
+user|	usr
+W	| 
+window	|win,wnd
