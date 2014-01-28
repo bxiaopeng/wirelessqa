@@ -4,6 +4,12 @@
 http://blog.csdn.net/wirelessqa/article/details/9026367
 
 
+### 获取当前时间
+
+```
+cur_time=`date +%Y-%m-%d-%H-%M-%S`
+```
+
 ### 倒计时功能实现
 
 ```
