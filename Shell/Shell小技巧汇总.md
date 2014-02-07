@@ -32,3 +32,23 @@ spinner()
 
 
 From : http://stackoverflow.com/questions/12498304/using-bash-to-display-a-progress-working-indicator/12498305#12498305
+
+
+
+# shell中如何进行一段代码的注释
+
+```
+:<<!EOF!
+cp ./a.txt ./b.txt
+mkdir -p {1,2,3}/{4,5,6}
+echo "ok"
+!EOF!
+```
+也把要注释的shell整体变成一个函数来达到不让执行的目的
+```
+notExce(){
+cp ./a.txt ./b.txt
+mkdir -p {1,2,3}/{4,5,6}
+echo "ok"
+}
+```
