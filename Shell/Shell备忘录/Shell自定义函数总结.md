@@ -12,10 +12,7 @@
 # 邮 箱:   wirelessqa.me@gmail.com
 # 博 客:   http://blog.csdn.net/wirelessqa
 # -------------------------------------------------------------------------------
-```
 
-```
-#! bin/bash
 
 function get_return_str()
 {  
