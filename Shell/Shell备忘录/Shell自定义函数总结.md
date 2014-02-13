@@ -1,4 +1,3 @@
-
 #### Shell自定义函数总结.sh
 
 ```
@@ -19,7 +18,7 @@ function get_return_str()
    echo "return \"$1\""
     return $1
 }
-w
+
 function get_return_int()
 {
     echo "return $(($1+$2))"
