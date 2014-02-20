@@ -32,6 +32,8 @@ cat <<EOF
 -L 判断是否为一个[symbolic link 的档案]
 -e 判断【某个东西】是否存在
 
+文件类型：http://linux-wiki.cn/wiki/zh-hans/%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B_(%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F)
+
 2. 关于程序的逻辑卷标！
 
 -G	判断是否由 GID 所执行的程序所拥有
