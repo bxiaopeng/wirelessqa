@@ -54,6 +54,8 @@ UITableViewDataSource 协议定了 2 个要求实现的方法:
 ```
 UITableViewDelegate 负责处理UITableView的表现。协议中的可选方法让你管理表行的高度,配置节点头部和底部,对表单元重新排序等等。
 ```
+**理解UITableViewDataSource和UITableViewDelegate是如何工作的？**
+![wirelessqa](./img/how.png)
 
 #### 2.2 修改实现方法
 ##### 2.2.1 实现文件里定义一个数组，用于存放数据源
