@@ -1,4 +1,8 @@
-# 一.实例步骤：
+#一起学习iOS开发一:SimpleTable项目
+
+声明：此系列为【一步一步学习iOS6】学习笔记,所有代码均在xcode5,iOS7上运行通过,所有文章逻辑均由**老毕**重新梳理,部分操作及代码有改动,并且备注了N多注释.希望对大家有所帮助
+
+## 一.实例步骤：
 
 ```
  1. 设计视图
@@ -10,15 +14,17 @@
  		2.2.2 viewDidLoad中实例化数组
  		2.2.3 强制实现两个数据源方法
  3. 连接数据源和委托
+ 4. 视图中添加缩略图
 ```
-# 二.具体实现
+## 二.具体实现
 
-## 1. 设计视图
+### 1. 设计视图
 对象库中拖拽Table View对象到视图中
+![wirelessqa](./img/tableview.png)
 
-## 2. 添加表数据
-### 2.1 修改头文件
-#### 2.1.1 头文件添加协议:UITableViewDelegate和UITableViewDataSource
+### 2. 添加表数据
+#### 2.1 修改头文件
+##### 2.1.1 头文件添加协议:UITableViewDelegate和UITableViewDataSource
 
 ```
 #import <UIKit/UIKit.h>
@@ -49,8 +55,8 @@ UITableViewDataSource 协议定了 2 个要求实现的方法:
 UITableViewDelegate 负责处理UITableView的表现。协议中的可选方法让你管理表行的高度,配置节点头部和底部,对表单元重新排序等等。
 ```
 
-### 2.2 修改实现方法
-#### 2.2.1 实现文件里定义一个数组，用于存放数据源
+#### 2.2 修改实现方法
+##### 2.2.1 实现文件里定义一个数组，用于存放数据源
 ```
 @implementation SimpleTableViewController
 {
@@ -59,7 +65,7 @@ UITableViewDelegate 负责处理UITableView的表现。协议中的可选方法�
     NSArray *tableData;
 }
 ```
-#### 2.2.2 viewDidLoad中实例化数组
+##### 2.2.2 viewDidLoad中实例化数组
 
 ```
 - (void)viewDidLoad
@@ -71,7 +77,7 @@ UITableViewDelegate 负责处理UITableView的表现。协议中的可选方法�
     tableData = [NSArray arrayWithObjects:@"Egg Benedict",                 @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"GreenTea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
 }
 ```
-#### 2.2.3 强制实现两个数据源方法
+##### 2.2.3 强制实现两个数据源方法
 
 **numberOfRowsInSection**
 
@@ -112,4 +118,39 @@ UITableViewDelegate 负责处理UITableView的表现。协议中的可选方法�
 }
 
 ```
-## 3. 连接数据源和委托
+### 3. 连接数据源和委托
+![wirelessqa](./img/delegate.png)
+
+**运行结果：**
+
+![wirelessqa](./img/appresult1.png)
+
+### 4. 视图中添加缩略图
+
+#### 4.1 添加图片到项目中
+右击SimpleTable -- Add Files to "SimpleTable.." --  选中要添加的图片 -- Add 
+#### 4.2 cellForRowAtIndexPath中添加代码
+SimpleTableViewController.m中的cellForRowAtIndexPath方法添加如下代码:
+
+```
+cell.imageView.image = [UIImage imageNamed:@"wirelessqa.jpg"];
+```
+
+#### 4.3 查看运行结果
+![wirelessqa](./img/appresult2.png)
+
+***注意: 实际上,表数据不在代码中直接指定。通常,表数据将从文件、数据库戒者其他地方加载***
+
+----
+####  微信公众帐号: wirelessqa 
+![wirelessqa](https://github.com/bxiaopeng/wirelessqa/raw/master/img/qrcode_for_gh_fdde1fe2880a_258.jpg)
+
+#### 关于作者：
+
+**作者:** 毕小朋 | 老 毕  **邮箱:** <wirelessqa.me@gmail.com> 
+
+**微博:** [@WirelessQA](http://www.weibo.com/wirelessqa) **博客:** <http://blog.csdn.net/wirelessqa>
+
+----
+
+
