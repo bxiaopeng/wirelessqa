@@ -1,4 +1,4 @@
-#### Linux文件类型总结
+# Linux学习总结之文件类型
 
 在Linux系统中，无论是常见的数据文件、可执行文件，还是一个目录，甚至设备都以文件的形式存在。正因如此，文件在文件系统中的类型也是多样的。
 
@@ -16,7 +16,7 @@
 符号链接|	 l|	 Symbolic link	 |软链接
 
 ### 2. 各文件类型简介
-各文件类型的主要含义如下[1]：
+各文件类型的主要含义如下：
 
 #### 普通文件(Regular file)
 普通意义上的文件，如数据文件、可执行文件等。
@@ -35,39 +35,18 @@ Linux中目录也是一种文件。目录文件包括了文件夹中所有文件
 
 ### 3. 查看文件的类型
 
-#### stat
-stat命令用于查看一个文件有关文件系统的信息。[2]可以看到第一行最后就是文件类型。
-
-```
-$ stat /dev/xconsole
- File: “/dev/xconsole”
- Size: 0         	Blocks: 0          IO Block: 4096   先进先出
-Device: dh/13d	Inode: 6817        Links: 1
-Access: (0640/prw-r-----)  Uid: (    0/    root)   Gid: (    4/     adm)
-Access: 2008-09-28 14:38:29.574820703 +0800
-Modify: 2008-09-28 14:40:30.630821133 +0800
-Change: 2008-09-28 14:40:30.630821133 +0800
-```
-#### ls
-ls命令就可以给出文件的类型，用法是：
-
 ls -l
 显示的结果中每行的第一个字符就是文件类型。
 
 ```
--rw-r--r-- 1 chenxing chenxing   903 2007-08-02 vga.wiki
-drwxr-xr-x 2 chenxing chenxing  4096 09-28 19:52 wpbin
-prw-r----- 1 root adm              0 09-28 14:40 xconsole
-crw-rw-rw- 1 root root        1,   5 2008-09-28 zero
-lrwxrwxrwx 1 root root             5 2008-09-28 root -> hda11
-srw-rw-rw- 1 root root             0 09-28 14:38 log
-brw-rw---- 1 root disk        3,   0 2008-09-28 hda
+bixiaopeng@bixiaopengtekiMacBook-Pro ~$ ls -l
+total 16
+drwxr-xr-x   3 bixiaopeng  staff   102  1 15 09:49 Applications
+drwx------+ 11 bixiaopeng  staff   374  2 16 14:20 Desktop
+-rw-r--r--   1 bixiaopeng  staff  1995  1 25 01:13 sm.sh
+lrwxr-xr-x     1 root  wheel      3 10 24 11:24 X11R6 -> X11
+
 ```
-
-#### 依据文件类型查找文件
-find命令的-t参数可以用于查找指定类型的文件。
-
-
 
 ----
 ####  微信公众帐号: wirelessqa 
