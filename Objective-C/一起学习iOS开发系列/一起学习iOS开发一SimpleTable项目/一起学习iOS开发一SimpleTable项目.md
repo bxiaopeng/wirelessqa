@@ -113,18 +113,11 @@ UITableViewDelegate 负责处理UITableView的表现。协议中的可选方法�
     //这正是dequeueReusableCellWithIdentifier要完成的事情
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil) {
-    /*
-    提示: alloc、init、new的区别：
-    1. 概括来说，new和alloc/init在功能上几乎是一致的，分配内存并完成初始化。
-    2. alloc 和 init 别把分配内存和初始化的工作分开。new 分配内存和初始化的工作一起完成了，先分配内存，然后调用类的构造函数。
-    3. 采用new的方式只能采用默认的init方法完成初始化
-    4. 采用alloc的方式可以用其他定制的初始化方法
-    */
-    /*
-    注释:
-    就是从队列中根据标示符取出一个暂时不用的cell，只有cell为nil，也就是队列中没有旧的cell的时候，
+
+
+    //就是从队列中根据标示符取出一个暂时不用的cell，只有cell为nil，也就是队列中没有旧的cell的时候，
 才会执行：
-    /*
+
         cell = [[UITableViewCell alloc]                initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
@@ -132,6 +125,15 @@ UITableViewDelegate 负责处理UITableView的表现。协议中的可选方法�
 }
 
 ```
+#### 温馨提示:
+    /*
+    alloc、init、new的区别：
+    1. 概括来说，new和alloc/init在功能上几乎是一致的，分配内存并完成初始化。
+    2. alloc 和 init 别把分配内存和初始化的工作分开。new 分配内存和初始化的工作一起完成了，先分配内存，然后调用类的构造函数。
+    3. 采用new的方式只能采用默认的init方法完成初始化
+    4. 采用alloc的方式可以用其他定制的初始化方法
+    */
+
 ### 3. 连接数据源和委托
 ![wirelessqa](./img/delegate.png)
 
