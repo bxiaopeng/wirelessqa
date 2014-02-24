@@ -84,7 +84,7 @@ UITableViewDelegate 负责处理UITableView的表现。协议中的可选方法�
 **numberOfRowsInSection**
 
 ```
-//用来通知表规图选择了多少条数据行
+//用来通知表视图选择了多少条数据行
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [tableData count];
@@ -95,12 +95,12 @@ UITableViewDelegate 负责处理UITableView的表现。协议中的可选方法�
 ```
 
 /*
- 每一次数据行显示的时候,都会调用 cellForeRowAtIndexPath方法
- 请求数据源,在表规图的特定位置插入一个单元格。表规图中可见的每一行都会触发该事件。
+ 每一次数据行显示的时候,都会调用 cellForRowAtIndexPath方法
+ 请求数据源,在表视图的特定位置插入一个单元格。表视图中可见的每一行都会触发该事件。
  事件中包含的参数之一是 NSIndexPath类型。
  NSIndexPath类表示数组集合中的某个特定项的路径。
- 要知道当前填充的是哪一行,叧需要调用 NSIndexPath 对象(indexPath)的 row 属性,然后使用行号来引用 tableData 数组中的元素即可。
- 得到的值被用来设置表规图中该行的文本值
+ 要知道当前填充的是哪一行,需要调用NSIndexPath对象(indexPath)的row 属性,然后使用行号来引用tableData 数组中的元素即可。
+ 得到的值被用来设置表视图中该行的文本值
 
  */
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -113,6 +113,18 @@ UITableViewDelegate 负责处理UITableView的表现。协议中的可选方法�
     //这正是dequeueReusableCellWithIdentifier要完成的事情
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil) {
+    /*
+    提示: alloc、init、new的区别：
+    1. 概括来说，new和alloc/init在功能上几乎是一致的，分配内存并完成初始化。
+    2. alloc 和 init 别把分配内存和初始化的工作分开。new 分配内存和初始化的工作一起完成了，先分配内存，然后调用类的构造函数。
+    3. 采用new的方式只能采用默认的init方法完成初始化
+    4. 采用alloc的方式可以用其他定制的初始化方法
+    */
+    /*
+    注释:
+    就是从队列中根据标示符取出一个暂时不用的cell，只有cell为nil，也就是队列中没有旧的cell的时候，
+才会执行：
+    /*
         cell = [[UITableViewCell alloc]                initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
