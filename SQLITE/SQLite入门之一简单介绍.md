@@ -1,9 +1,9 @@
-## SQLite是什么
+## 1.1. SQLite是什么
 SQLite是一个进程内的库，实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。它是一个零配置的数据库，这意味着与其他数据库一样，您不需要在系统中配置。
 
 就像其他数据库，SQLite 引擎不是一个独立的进程，可以按应用程序需求进行静态或动态连接。SQLite 直接访问其存储文件。
 
-## 为什么要用 SQLite？
+## 1.2 为什么要用 SQLite？
 不需要一个单独的服务器进程或操作的系统（无服务器的）。
 
 SQLite 不需要配置，这意味着不需要安装或管理。
@@ -22,7 +22,7 @@ SQLite 使用 ANSI-C 编写的，并提供了简单和易于使用的 API。
 
 SQLite 可在 UNIX（Linux, Mac OS-X, Android, iOS）和 Windows（Win32, WinCE, WinRT）中运行。
 
-## SQLite 语法
+## 1.3 SQLite 语法
 
 SQLite 是遵循一套独特的称为语法的规则和准则。
 
@@ -41,9 +41,9 @@ sqlite&gt;.help -- This is a single line comment
 ### 3. SQLite 语句
 所有的 SQLite 语句可以以任何关键字开始，如 SELECT、INSERT、UPDATE、DELETE、ALTER、DROP 等，所有的语句以分号（;）结束。
 
-更多请参考：<http://www.w3cschool.cc/sqlite/sqlite-syntax.html>
 
-## SQLite 数据类型
+
+## 1.4 SQLite 数据类型
 
 SQLite 数据类型是一个用来指定任何对象的数据类型的属性。SQLite 中的每一列，每个变量和表达式都有相关的数据类型。
 
@@ -62,9 +62,9 @@ BLOB	|值是一个 blob 数据，完全根据它的输入存储。
 
 SQLite 的存储类型稍微比数据类型更普遍。INTEGER 存储类，例如，包含 6 种不同的不同长度的整数数据类型。
 
-更多请参考: <http://www.w3cschool.cc/sqlite/sqlite-data-types.html>
 
-## 环境配置
+
+## 1.5 环境配置
 
 ### sqlite3下载地址:
 
@@ -83,3 +83,21 @@ Enter SQL statements terminated with a ";"
 sqlite> .quit
 ```
 
+本系列主要参考：
+
+http://www.w3cschool.cc/sqlite/sqlite-functions.html
+
+http://www.cnblogs.com/myqiao/archive/2011/07/10/2102465.html
+
+
+----
+####  微信公众帐号: wirelessqa 
+![wirelessqa](https://github.com/bxiaopeng/wirelessqa/raw/master/img/qrcode_for_gh_fdde1fe2880a_258.jpg)
+
+#### 关于作者：
+
+**作者:** 毕小朋 | 老 毕  **邮箱:** <wirelessqa.me@gmail.com> 
+
+**微博:** [@WirelessQA](http://www.weibo.com/wirelessqa) **博客:** <http://blog.csdn.net/wirelessqa>
+
+----

@@ -180,3 +180,22 @@ separator: "|"
 .sqlterc 文件在 Linux下保存在用户的Home目录下,在Windows下可以保存到任何目录下，但是需要设置环境变量让数据库引擎能找到它，这个就不举例了，感兴趣的可以看看帮助。 
 
 ### 3.8 更多命令请查看帮助
+
+本系列主要参考：
+
+http://www.w3cschool.cc/sqlite/sqlite-functions.html
+
+http://www.cnblogs.com/myqiao/archive/2011/07/10/2102465.html
+
+
+----
+####  微信公众帐号: wirelessqa 
+![wirelessqa](https://github.com/bxiaopeng/wirelessqa/raw/master/img/qrcode_for_gh_fdde1fe2880a_258.jpg)
+
+#### 关于作者：
+
+**作者:** 毕小朋 | 老 毕  **邮箱:** <wirelessqa.me@gmail.com> 
+
+**微博:** [@WirelessQA](http://www.weibo.com/wirelessqa) **博客:** <http://blog.csdn.net/wirelessqa>
+
+----
