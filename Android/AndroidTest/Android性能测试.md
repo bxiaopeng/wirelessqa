@@ -6,17 +6,17 @@
 **adb shell进入手机，这此参数被纪录在/system/build.prop中,如果想直接查看可以使用adb shell getprop**
 
 
-\#单个应用程序最大内存限制,超过这个值会产生OOM
+## 单个应用程序最大内存限制,超过这个值会产生OOM
 
 ```
 dalvik.vm.heapgrowthlimit 
 ```
-\#应用启动后分配的初始内存
+## 应用启动后分配的初始内存
 
 ```
 dalvik.vm.heapstartsize 
 ```
-\#单个java虚拟机最大的内存限制,超过这个值会产生OOM
+## 单个java虚拟机最大的内存限制,超过这个值会产生OOM
 
 ```
 dalvik.vm.heapsize 
